@@ -1,4 +1,4 @@
-import { AppEnvironmentConfig ,BaseUrlConfig ,NoSqlDbConfig } from "../interfaces";
+import { AppEnvironmentConfig ,BaseUrlConfig ,NoSqlDbConfig, AppPortConfig } from "../interfaces";
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 
@@ -26,13 +26,24 @@ export class EnvService {
 		return this.getOrThrow<AppEnvironmentConfig>("environment");
 	}
 
+
+
+/**
+ * Retrieve the application port configuration.
+ *
+ * @returns  The application port configuration.
+ */
+public getAppPortConfig(): AppPortConfig {
+	return this.getOrThrow<AppPortConfig>("port");
+}
+
 	/**
 	 * Retrieve the NoSQL database configuration.
 	 *
 	 * @returns The NoSQL database configuration.
 	 */
 	public getNoSqlDbConfig(): NoSqlDbConfig {
-		return this.getOrThrow<NoSqlDbConfig>("nosql");
+		return this.getOrThrow<NoSqlDbConfig>("noSqlDb");
 	}
 
 	/**
