@@ -12,7 +12,7 @@ async function bootstrap( ): Promise<void> {
 
 	app.enableCors({
 		origin: "*",
-		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+		methods: "GET,HEAD,PUT,PATCH,POST,DELETE", 
 		preflightContinue: true,
 		optionsSuccessStatus: 204,
 		credentials: true,

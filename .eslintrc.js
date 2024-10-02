@@ -18,20 +18,20 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   rules: {
     //  "@typescript-eslint/no-var-requires": "off",
-		"@typescript-eslint/interface-name-prefix": "off",
-		"@typescript-eslint/explicit-function-return-type": "error",
-		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"@typescript-eslint/no-explicit-any": "error",
-		"@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-require-imports": "off"
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-require-imports': 'off',
   },
   overrides: [
-		{
-			files: ["**/*.js"],
-			rules: {
-				"@typescript-eslint/no-var-requires": "off",
-				"@typescript-eslint/explicit-function-return-type": "off"
-			}
-		}
-	]
+    {
+      files: ['**/*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+      },
+    },
+  ],
 };

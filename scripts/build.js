@@ -1,5 +1,5 @@
-const { execSync } = require("child_process");
-const chalk = require("chalk");
+const { execSync } = require('child_process');
+const chalk = require('chalk');
 
 // Extracting command-line arguments
 const env = process.argv[2];
@@ -33,7 +33,7 @@ Example:
   process.exit(1);
 }
 
-// Function to build 
+// Function to build
 function buildApi(env) {
   const buildCommand = `cross-env NODE_ENV=${env} nest build`;
 

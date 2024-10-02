@@ -20,6 +20,6 @@
     "allowJs": true,
     "esModuleInterop": true,
     "noLib": false,
-		"disableSizeLimit": true,
+    "disableSizeLimit": true
   }
 }

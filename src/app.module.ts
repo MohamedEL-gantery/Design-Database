@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { NoSqlDbModule } from "./database"
-import { EnvModule } from "./env"
+import { NoSqlDbModule } from './database';
+import { EnvModule } from './env';
 
 @Module({
   imports: [EnvModule, NoSqlDbModule],
