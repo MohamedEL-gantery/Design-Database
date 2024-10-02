@@ -8,11 +8,10 @@ const noSqlDbConfig = {
   username: EnvValidator.getStringOrThrow('DB_USER'),
   password: EnvValidator.getStringOrThrow('DB_PASSWORD'),
   dbName: EnvValidator.getStringOrThrow('DB_NAME'),
-  port: EnvFileUtil.getEnvFilePath().includes('local') 
-    ? EnvValidator.getNumberOrThrow('DB_PORT') 
+  port: EnvFileUtil.getEnvFilePath().includes('local')
+    ? EnvValidator.getNumberOrThrow('DB_PORT')
     : undefined,
 };
-
 
 export default (): AppConfigInterface => ({
   environment: {

@@ -1,1 +1,1 @@
-export * from "./environment-type.enum";
+export * from './environment-type.enum';

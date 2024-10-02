@@ -2,6 +2,7 @@ import { Global, Module, OnApplicationBootstrap } from '@nestjs/common';
 import { EnvironmentUtil } from '../env/util';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { noSqlModels } from './schemas/';
 import { EnvService } from '../env/services';
 import { EnvModule } from '../env';
 
@@ -26,21 +27,25 @@ import { EnvModule } from '../env';
       },
       inject: [EnvService],
     }),
-		// MongooseModule.forFeature(noSqlModels)
+    MongooseModule.forFeature(noSqlModels),
   ],
-	// providers: [...noSqlRepositories],
-	// exports: [MongooseModule, ...noSqlRepositories]
+
+  exports: [MongooseModule],
 })
 export class NoSqlDbModule implements OnApplicationBootstrap {
-	constructor(private readonly envService: EnvService) {}
-	
-	async 	onApplicationBootstrap(): Promise<void> {
-		try {
-			const { host, dbName } = this.envService.getNoSqlDbConfig();
-			console.log(`[MongoDB] The connection with database "${dbName}" on host "${host}" is done successfully!`);
-		} catch (error) {
-			const { code, address, port } = error;
-			console.error(`[MongoDB] Failed to connect to the database. Error: ${code} ${address}:${port}!`);
-		}
-	}
+  constructor(private readonly envService: EnvService) {}
+
+  async onApplicationBootstrap(): Promise<void> {
+    try {
+      const { host, dbName } = this.envService.getNoSqlDbConfig();
+      console.log(
+        `[MongoDB] The connection with database "${dbName}" on host "${host}" is done successfully!`,
+      );
+    } catch (error) {
+      const { code, address, port } = error;
+      console.error(
+        `[MongoDB] Failed to connect to the database. Error: ${code} ${address}:${port}!`,
+      );
+    }
+  }
 }
